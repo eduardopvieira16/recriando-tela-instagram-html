@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Recriação educacional e responsiva da interface de autenticação do Instagram.">
+    <meta name="theme-color" content="#0c1014">
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'"
+    >
+
+    <title>Instagram — Entrar</title>
+
+    <link rel="icon" href="./assets/icons/instagram-glyph.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="./js/ui-deterrence.js" defer></script>
+    <script src="./js/app.js" defer></script>
+</head>
+
+<body data-context-menu-scope="document">
+    <a class="skip-link" href="#login-form">Ir para o formulário de login</a>
+
+    <div class="page-shell">
+        <main class="login-page">
+            <section class="marketing-panel" aria-labelledby="marketing-title">
+                <img
+                    class="marketing-panel__brand protected-asset"
+                    src="./assets/icons/instagram-glyph.svg"
+                    alt="Instagram"
+                    width="76"
+                    height="76"
+                    draggable="false"
+                >
+            
+                <div class="marketing-panel__content">
+                    <span>Curso desenvolvido na plataforma da DIO</span>
+                    <h1 id="marketing-title" class="marketing-panel__title">
+                        Veja momentos do dia a dia<br>
+                        dos seus <span>amigos próximos.</span>
+                    </h1>
+
+                    <img
+                        class="marketing-panel__collage protected-asset"
+                        src="./assets/images/hero-collage.png"
+                        alt="Composição visual de momentos compartilhados entre amigos"
+                        width="507"
+                        height="426"
+                        draggable="false"
+                        decoding="async"
+                    >
+                </div>
+            </section>
+
+            <section class="login-panel" aria-labelledby="login-title">
+                <div class="login-panel__content">
+                    <img
+                        class="login-panel__mobile-brand protected-asset"
+                        src="./assets/icons/instagram-glyph.svg"
+                        alt=""
+                        width="72"
+                        height="72"
+                        draggable="false"
+                    >
+
+                    <h2 id="login-title" class="login-panel__title">Entrar no Instagram</h2>
+
+                    <form id="login-form" class="login-form" data-login-form novalidate>
+                        <div class="field">
+                            <label class="sr-only" for="identifier">
+                                Número de celular, nome de usuário ou email
+                            </label>
+                            <input
+                                id="identifier"
+                                class="field__input"
+                                name="identifier"
+                                type="text"
+                                autocomplete="username"
+                                placeholder="Número de celular, nome de usuário ou email"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label class="sr-only" for="password">Senha</label>
+                            <input
+                                id="password"
+                                class="field__input"
+                                name="password"
+                                type="password"
+                                autocomplete="current-password"
+                                placeholder="Senha"
+                                minlength="6"
+                                required
+                            >
+                        </div>
+
+                        <button
+                            class="button button--login"
+                            type="submit"
+                            data-submit-button
+                            disabled
+                        >
+                            Entrar
+                        </button>
+                    </form>
+
+                    <a
+                        class="forgot-password"
+                        href="https://www.instagram.com/accounts/password/reset/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Esqueceu a senha?
+                    </a>
+
+                    <div class="secondary-actions">
+                        <a
+                            class="button button--facebook"
+                            href="https://www.instagram.com/accounts/login/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <svg class="button__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                                <path d="M13.3 18v-5h1.8l.3-2h-2.1V9.7c0-.6.2-1 1.1-1h1.1V6.9c-.2 0-.9-.1-1.6-.1-1.7 0-2.8 1-2.8 2.9V11H9.2v2h1.9v5h2.2Z" fill="#1d1d20"/>
+                            </svg>
+                            Entrar com o Facebook
+                        </a>
+
+                        <a
+                            class="button button--create"
+                            href="https://www.instagram.com/accounts/emailsignup/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Criar nova conta
+                        </a>
+                    </div>
+
+                    <div class="meta-brand" aria-label="Meta">
+                        <svg class="meta-brand__icon" viewBox="0 0 32 18" aria-hidden="true">
+                            <path
+                                d="M3 15.3c2.7 0 4.8-7.8 7.1-7.8 2.5 0 4.5 7.8 7 7.8 2.7 0 4.7-7.8 7.3-7.8 2.1 0 3.7 3.8 4.6 6.2"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-width="2.2"
+                            />
+                        </svg>
+                        <span>Meta</span>
+                    </div>
+
+                    <p class="login-status" role="status" aria-live="polite" data-status></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <nav class="page-footer__links" aria-label="Links institucionais">
+                <a href="https://about.meta.com/" target="_blank" rel="noopener noreferrer">Meta</a>
+                <a href="https://about.instagram.com/" target="_blank" rel="noopener noreferrer">Sobre</a>
+                <a href="https://about.instagram.com/blog" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="https://about.instagram.com/about-us/careers" target="_blank" rel="noopener noreferrer">Carreiras</a>
+                <a href="https://help.instagram.com/" target="_blank" rel="noopener noreferrer">Ajuda</a>
+                <a href="https://developers.facebook.com/docs/instagram" target="_blank" rel="noopener noreferrer">API</a>
+                <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer">Privacidade</a>
+                <a href="https://help.instagram.com/581066165581870" target="_blank" rel="noopener noreferrer">Termos</a>
+                <a href="https://www.instagram.com/explore/locations/" target="_blank" rel="noopener noreferrer">Localizações</a>
+                <a href="https://www.instagram.com/web/lite/" target="_blank" rel="noopener noreferrer">Instagram Lite</a>
+                <a href="https://www.meta.ai/" target="_blank" rel="noopener noreferrer">Meta AI</a>
+                <a href="https://www.threads.com/" target="_blank" rel="noopener noreferrer">Threads</a>
+                <a href="https://www.facebook.com/help/instagram/261704639352628" target="_blank" rel="noopener noreferrer">
+                    Upload de contatos e não usuários
+                </a>
+                <a href="https://about.meta.com/actions/safety/audiences/instagram/" target="_blank" rel="noopener noreferrer">
+                    Meta Verified
+                </a>
+            </nav>
+
+            <div class="page-footer__meta">
+                <span>Português (Brasil)⌄</span>
+                <span>© <span data-current-year></span> Instagram from Meta</span>
+            </div>
+        </footer>
+    </div>
+
+    <noscript>
+        <p class="noscript-message">Ative o JavaScript para validar o formulário localmente.</p>
+    </noscript>
+</body>
+</html>
